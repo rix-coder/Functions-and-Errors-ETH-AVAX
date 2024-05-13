@@ -24,8 +24,8 @@ This program is a simple contract written in Solidity, a programming language us
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.25;
-contract ErrorHandling {
+    pragma solidity ^0.8.25;
+    contract ErrorHandling {
     uint public totVal;
     function setValue(uint _InputNum) external  {
         require(_InputNum >= 5, "Num must be greater than and equal to 5");
