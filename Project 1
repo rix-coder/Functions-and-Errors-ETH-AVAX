@@ -1,0 +1,26 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.25;
+
+contract ErrorHandling {
+    uint public result;
+
+    function InputNum (uint _InputNum) external  {
+        require( _InputNum != 0, "InputNum must not be Zero.");
+       
+       result = _InputNum;
+    }
+
+    
+    function DeductValue(uint _deduct) external  {
+        if ( _deduct >= result){
+            revert("Deduct Value is greater than to the Results.");
+        }
+
+        uint newTotalValue = result - _deduct;
+        result = newTotalValue;
+    }
+
+    function testAssert() public pure {
+        assert(1 == 1);
+    }
+}
