@@ -22,32 +22,32 @@ This program is a simple contract written in Solidity, a programming language us
 - Open a Solidity file in the repository and copy the code and paste it to the IDE you use.
 -Add sol suffixes in your file name if you try to run it to the IDE so it read as a SOLIDITY FILE
 
-    // SPDX-License-Identifier: MIT
-    pragma solidity ^0.8.25;
-    
-    contract ErrorHandling {
-        uint public result;
-    
-        function InputNum (uint _InputNum) external  {
-            require( _InputNum != 0, "InputNum must not be Zero.");
-           
-           result = _InputNum;
-        }
-    
+        // SPDX-License-Identifier: MIT
+        pragma solidity ^0.8.25;
         
-        function DeductValue(uint _deduct) external  {
-            if ( _deduct >= result){
-                revert("Deduct Value is greater than to the Results.");
+        contract ErrorHandling {
+            uint public result;
+        
+            function InputNum (uint _InputNum) external  {
+                require( _InputNum != 0, "InputNum must not be Zero.");
+               
+               result = _InputNum;
             }
-    
-            uint newTotalValue = result - _deduct;
-            result = newTotalValue;
+        
+            
+            function DeductValue(uint _deduct) external  {
+                if ( _deduct >= result){
+                    revert("Deduct Value is greater than to the Results.");
+                }
+        
+                uint newTotalValue = result - _deduct;
+                result = newTotalValue;
+            }
+        
+            function testAssert() public pure {
+                assert(1 == 1);
+            }
         }
-    
-        function testAssert() public pure {
-            assert(1 == 1);
-        }
-    }
 
 ## Reminder
 Be aware and alert for some errors:
