@@ -30,3 +30,14 @@ Be aware and alert for some errors:
 - Check your File name if its red
 - Don't forget to count and check some valuable symbols { } , [ ] , ( ) , ;
 
+## Author
+NTCIAN Rix
+Email: 422003664@ntc.edu.ph
+<br>
+[Discord: @Rix]rix1473
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+
