@@ -23,8 +23,8 @@ This program is a simple contract written in Solidity, a programming language us
 -Add sol suffixes in your file name if you try to run it to the IDE so it read as a SOLIDITY FILE
 
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.25;
 
+pragma solidity ^0.8.25;
 contract ErrorHandling {
     uint public totVal;
     function setValue(uint _InputNum) external  {
