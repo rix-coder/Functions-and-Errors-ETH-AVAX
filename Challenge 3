@@ -1,0 +1,25 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.25;
+
+contract Challeng3Balance {
+    mapping(address => uint56) public balances;
+
+    event balanceAdd (address indexed acc, uint56 amt);
+    event balanceDeduct (address indexed acc, uint56 amt);
+    event balanceDisplay (address indexed acc, uint56 bal);
+
+    function addBalance(uint56 _amt) external {
+        balances[msg.sender] += _amt;
+        emit balanceAdd(msg.sender, _amt);
+    }
+
+    function deductBalance(uint56 _amt) external {
+        require(balances[msg.sender] >= _amt, "Insufficient balance");
+        balances[msg.sender] -= _amt;
+        emit balanceDeduct(msg.sender, _amt);
+    }
+
+    function displayBalance() external {
+        emit balanceDisplay(msg.sender, balances[msg.sender]);
+    }
+}
