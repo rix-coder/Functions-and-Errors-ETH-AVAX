@@ -34,7 +34,7 @@ Be aware and alert for some errors:
 NTCIAN Rix
 Email: 422003664@ntc.edu.ph
 <br>
-[Discord: @Rix](https://discord.com/channels/@me)
+[Discord: @Rix](rix1473)
 
 ## License
 
