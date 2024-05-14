@@ -22,34 +22,34 @@ This program is a simple contract written in Solidity, a programming language us
 - Open a Solidity file in the repository and copy the code and paste it to the IDE you use.
 -Add sol suffixes in your file name if you try to run it to the IDE so it read as a SOLIDITY FILE
 
-          // SPDX-License-Identifier: MIT
-  pragma solidity ^0.8.25;
-  
-  contract ErrorHandling {
-      uint public result;
-  
-      function EvenNumber (uint _inputNum) external  {
-          require(_inputNum != 0, "Input Num must not be Zero");
-
-          if (_inputNum % 2 != 0){
-            revert("Input Number is not Even Number.");
-          }
-            result = _inputNum;   
-      }
-  
-      
-      function MultiplyEvenNum (uint _multi) external  {
-        require(_multi != 0, "Multiplier must not be Zero");
-
-        uint newResult = result * _multi;
-        result = newResult;
-      }
-        
-
-      function testAssert() public view  {
-          assert(result != 0);
-      }
-  }
+            // SPDX-License-Identifier: MIT
+            pragma solidity ^0.8.25;
+            
+            contract ErrorHandling {
+                uint public result;
+            
+                function EvenNumber (uint _inputNum) external  {
+                    require(_inputNum != 0, "Input Num must not be Zero");
+          
+                    if (_inputNum % 2 != 0){
+                      revert("Input Number is not Even Number.");
+                    }
+                      result = _inputNum;   
+                }
+            
+                
+                function MultiplyEvenNum (uint _multi) external  {
+                  require(_multi != 0, "Multiplier must not be Zero");
+          
+                  uint newResult = result * _multi;
+                  result = newResult;
+                }
+                  
+          
+                function testAssert() public view  {
+                    assert(result != 0);
+                }
+            }
 
 ## Reminder
 Be aware and alert for some errors:
