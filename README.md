@@ -22,26 +22,27 @@ This program is a simple contract written in Solidity, a programming language us
 - Open a Solidity file in the repository and copy the code and paste it to the IDE you use.
 -Add sol suffixes in your file name if you try to run it to the IDE so it read as a SOLIDITY FILE
 
-            // SPDX-License-Identifier: MIT
+           // SPDX-License-Identifier: MIT
             pragma solidity ^0.8.25;
 
-                        contract ErrorHanddling {
-                            function RunRequire(uint _LeapYear) public pure {
-                                require((_LeapYear % 4 == 0) && ((_LeapYear % 100 != 0) || (_LeapYear % 400 == 0)), "Input Year should be a leap year");
-                            }
-                        
-                            function RunRevert(uint _EvenNum) public pure {
-                                if (_EvenNum % 2 != 0 ) {
-                                    revert("Number is not an Even number.");
-                                }
-                            }
-                        
-                            uint public num;
-                        
-                            function RunAssert() public view {
-                                assert(num == 0);
-                            }
-                        }
+            contract ErrorHanddling {
+                function RunRequire(uint _LeapYear) public pure {
+                    require((_LeapYear % 4 == 0) && ((_LeapYear % 100 != 0) || (_LeapYear % 400 == 0)), "Input Year should be a leap year");
+                }
+            
+                function RunRevert(uint _EvenNum) public pure {
+                    if (_EvenNum % 2 != 0 ) {
+                        revert("Number is not an Even number.");
+                    }
+                }
+            
+                uint public num;
+            
+                function RunAssert() public view {
+                    assert(num == 0);
+                }
+            }
+
 
 ## Reminder
 Be aware and alert for some errors:
