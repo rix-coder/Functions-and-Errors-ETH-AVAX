@@ -24,32 +24,24 @@ This program is a simple contract written in Solidity, a programming language us
 
             // SPDX-License-Identifier: MIT
             pragma solidity ^0.8.25;
-            
-            contract ErrorHandling {
-                uint public result;
-            
-                function EvenNumber (uint _inputNum) external  {
-                    require(_inputNum != 0, "Input Num must not be Zero");
-          
-                    if (_inputNum % 2 != 0){
-                      revert("Input Number is not Even Number.");
-                    }
-                      result = _inputNum;   
-                }
-            
-                
-                function MultiplyEvenNum (uint _multi) external  {
-                  require(_multi != 0, "Multiplier must not be Zero");
-          
-                  uint newResult = result * _multi;
-                  result = newResult;
-                }
-                  
-          
-                function testAssert() public view  {
-                    assert(result != 0);
-                }
-            }
+
+                        contract ErrorHanddling {
+                            function RunRequire(uint _LeapYear) public pure {
+                                require((_LeapYear % 4 == 0) && ((_LeapYear % 100 != 0) || (_LeapYear % 400 == 0)), "Input Year should be a leap year");
+                            }
+                        
+                            function RunRevert(uint _EvenNum) public pure {
+                                if (_EvenNum % 2 != 0 ) {
+                                    revert("Number is not an Even number.");
+                                }
+                            }
+                        
+                            uint public num;
+                        
+                            function RunAssert() public view {
+                                assert(num == 0);
+                            }
+                        }
 
 ## Reminder
 Be aware and alert for some errors:
